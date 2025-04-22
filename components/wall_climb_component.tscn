@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://206ydhj3byl"]
+
+[ext_resource type="Script" path="res://components/wall_climb_component.gd" id="1_qny2b"]
+
+[node name="WallClimbComponent" type="Node"]
+script = ExtResource("1_qny2b")

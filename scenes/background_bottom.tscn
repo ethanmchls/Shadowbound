@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://c008i1wjha826"]
+
+[ext_resource type="Texture2D" uid="uid://c2j74rpv41b0l" path="res://assets/hellbackground-base.png" id="1_h6btq"]
+[ext_resource type="Texture2D" uid="uid://ifpanfdm002o" path="res://assets/hellbackground-base2.png" id="2_ohgoi"]
+[ext_resource type="Texture2D" uid="uid://bc07tnuv3xuvg" path="res://assets/hellbackground-base3.png" id="3_v21i0"]
+[ext_resource type="Texture2D" uid="uid://d3523jvh87xhv" path="res://assets/hellbackground-base4.png" id="4_1blke"]
+
+[node name="BackgroundBottom" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.25, 0.25)
+
+[node name="bg" type="TextureRect" parent="ParallaxLayer"]
+texture_repeat = 3
+offset_left = -505.0
+offset_top = 328.0
+offset_right = 4609.0
+offset_bottom = 858.0
+scale = Vector2(0.731771, 0.603704)
+texture = ExtResource("1_h6btq")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_offset = Vector2(0, 3.69)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer2"]
+offset_left = -505.0
+offset_top = 322.0
+offset_right = 4601.0
+offset_bottom = 853.0
+scale = Vector2(0.732292, 0.677778)
+texture = ExtResource("2_ohgoi")
+expand_mode = 1
+stretch_mode = 1
+flip_v = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.75, 0.75)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer3"]
+offset_left = -502.0
+offset_top = 324.0
+offset_right = 4611.0
+offset_bottom = 845.0
+scale = Vector2(0.731019, 1.10556)
+texture = ExtResource("3_v21i0")
+expand_mode = 1
+stretch_mode = 1
+flip_v = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer4"]
+offset_left = -502.0
+offset_top = 324.0
+offset_right = 4611.0
+offset_bottom = 845.0
+scale = Vector2(0.731019, 1.10556)
+texture = ExtResource("4_1blke")
+expand_mode = 1
+stretch_mode = 1
+flip_v = true

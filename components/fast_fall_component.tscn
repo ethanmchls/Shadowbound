@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://udxv1o470om"]
+
+[ext_resource type="Script" path="res://components/fast_fall_component.gd" id="1_6rv0d"]
+
+[node name="FastFallComponent" type="Node"]
+script = ExtResource("1_6rv0d")

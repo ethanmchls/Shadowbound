@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyg84ewlv3qlr"]
+
+[ext_resource type="Script" path="res://components/air_dash_component.gd" id="1_mokcc"]
+
+[node name="AirDashComponent" type="Node"]
+script = ExtResource("1_mokcc")

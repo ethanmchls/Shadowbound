@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://o0xulg38g0ss"]
+
+[ext_resource type="Texture2D" uid="uid://bhwago8flsv20" path="res://assets/hellbackground-base-inverse.png" id="1_jo8mo"]
+[ext_resource type="Texture2D" uid="uid://b1t8ifwrlmigw" path="res://assets/hellbackground-base2-inverse.png" id="2_2yeap"]
+[ext_resource type="Texture2D" uid="uid://t0r3bqxman2h" path="res://assets/hellbackground-base3-inverse.png" id="4_5bfrg"]
+[ext_resource type="Texture2D" uid="uid://drubnwop82aes" path="res://assets/hellbackground-base4-inverse.png" id="5_dc6lx"]
+
+[sub_resource type="Shader" id="Shader_unjcy"]
+code = "shader_type canvas_item;
+
+uniform vec4 og_color : source_color;
+uniform vec4 new_color : source_color;
+
+void fragment() {
+	vec4 bg = texture(TEXTURE, UV);
+
+	if (bg == og_color) {
+		COLOR = new_color;
+	}
+	else {
+		COLOR = bg;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtg04"]
+shader = SubResource("Shader_unjcy")
+shader_parameter/og_color = Color(0.329412, 0.282353, 0.345098, 1)
+shader_parameter/new_color = Color(0, 0.196078, 0.333333, 1)
+
+[node name="BackgroundTop" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.25, 0.25)
+
+[node name="bg" type="TextureRect" parent="ParallaxLayer"]
+texture_repeat = 3
+offset_left = -505.0
+offset_top = -4.0
+offset_right = 4609.0
+offset_bottom = 541.0
+scale = Vector2(0.731771, 0.603704)
+texture = ExtResource("1_jo8mo")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_offset = Vector2(0, 3.69)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer2"]
+z_index = 4094
+z_as_relative = false
+offset_left = -505.0
+offset_top = -50.0
+offset_right = 4601.0
+offset_bottom = 503.0
+scale = Vector2(0.732292, 0.677778)
+texture = ExtResource("2_2yeap")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.75, 0.75)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer3"]
+z_index = 4096
+z_as_relative = false
+material = SubResource("ShaderMaterial_jtg04")
+offset_left = -502.0
+offset_top = -294.0
+offset_right = 4611.0
+offset_bottom = 266.0
+scale = Vector2(0.731019, 1.10556)
+texture = ExtResource("4_5bfrg")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="TextureRect" parent="ParallaxLayer4"]
+z_index = 4096
+z_as_relative = false
+material = SubResource("ShaderMaterial_jtg04")
+offset_left = -502.0
+offset_top = -294.0
+offset_right = 4611.0
+offset_bottom = 266.0
+scale = Vector2(0.731019, 1.10556)
+texture = ExtResource("5_dc6lx")
+expand_mode = 1
+stretch_mode = 1
